@@ -1,0 +1,27 @@
+#ifndef CLASSES_H
+#define CLASSES_H
+
+#include "BBV.h"
+#include "boolinterval.h"
+#include "boolequation.h"
+
+class NodeBoolTree
+{
+public:
+NodeBoolTree* lt, *rt;
+BoolEquation* eq;
+BoolInterval**dnf;//множество интервалов
+int count;
+BBV mask;
+};
+
+class BoolEquation
+{
+BoolInterval**dnf;//множество интервалов
+BoolInterval*root;//Корень уравнения
+int count; //количество конъюнкций
+public:
+BoolInterval FindRoot();
+};
+
+#endif // CLASSES_H
